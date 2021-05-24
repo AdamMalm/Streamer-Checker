@@ -27,22 +27,21 @@ const ForgotPassword = () => {
 
     return (
         <>
-            <div className="ForgotPassword-container">
+            <div className="forgotPassword-container">
                 <h2>Password Reset</h2>
                 {error && <p>{error}</p>}
                 {message && <p>{message}</p>}
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
-                        <label htmlFor="email">Email: </label>
-                        <input type="email" name="email" ref={emailRef}/>
+                        <input type="email" name="email" placeholder="Email..." ref={emailRef}/>
                     </div>
-                    <input disabled={loading} type="submit" value="Reset Password" />
+                    <input className="form-btn" disabled={loading} type="submit" value="Reset Password" />
                 </form>
                 <div>
-                    <Link to='/login'>Log In</Link>
+                    <Link className="login-btn" to='/login'>Log In</Link>
                 </div>
             </div>
-            <div>
+            <div className="signup-div">
                 Need an an account? <Link to="/signup">Sign Up</Link>
             </div>
         </>

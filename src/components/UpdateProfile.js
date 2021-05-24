@@ -40,23 +40,20 @@ const UpdateProfile = () => {
 
     return (
         <>
-            <div className="signup-container">
+            <div className="update-container">
                 <h2>Update Profile</h2>
                 {error && <p>{error}</p>}
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
-                        <label htmlFor="email">Email: </label>
-                        <input type="email" name="email" ref={emailRef} defaultValue={currentUser.email}/>
+                        <input type="email" name="email" ref={emailRef} placeholder="Email" defaultValue={currentUser.email}/>
                     </div>
                     <div className="form-group">
-                        <label htmlFor="password">Password: </label>
-                        <input type="password" name="password" ref={passwordRef} placeholder="Leave blank to keep the same" />
+                        <input type="password" name="password" ref={passwordRef} placeholder="Password, leave blank to keep the same" />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="password-confirm">Password Confirmation: </label>
-                        <input type="password" name="password-confirm" ref={passwordConfirmRef} placeholder="Leave blank to keep the same" />
+                        <input type="password" name="password-confirm" ref={passwordConfirmRef} placeholder="Password, leave blank to keep the same" />
                     </div>
-                    <input disabled={loading} type="submit" value="Update" />
+                    <input className="form-btn" disabled={loading} type="submit" value="Update" />
                 </form>
             </div>
             <div>

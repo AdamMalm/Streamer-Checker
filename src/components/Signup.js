@@ -33,26 +33,23 @@ const Signup = () => {
     return (
         <>
             <div className="signup-container">
-                <h2>Sign Up</h2>
                 {error && <p>{error}</p>}
+                <div className="login-signup-switch">
+                    <Link className="login-btn login-signup" to="/login">Log in</Link>
+                    <Link className="signup-btn login-signup" to="/signup">Sign Up</Link>
+                </div>
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
-                        <label htmlFor="email">Email: </label>
-                        <input type="email" name="email" ref={emailRef}/>
+                        <input type="email" name="email" placeholder="Email" ref={emailRef}/>
                     </div>
                     <div className="form-group">
-                        <label htmlFor="password">Password: </label>
-                        <input type="password" name="password" ref={passwordRef} required/>
+                        <input type="password" name="password" placeholder="Password" ref={passwordRef} required/>
                     </div>
                     <div className="form-group">
-                        <label htmlFor="password-confirm">Password Confirmation: </label>
-                        <input type="password" name="password-confirm" ref={passwordConfirmRef} required/>
+                        <input type="password" name="password-confirm" placeholder="Confirm passoword" ref={passwordConfirmRef} required/>
                     </div>
-                    <input disabled={loading} type="submit" value="Submit" />
+                    <input className="form-btn" disabled={loading} type="submit" value="Submit" />
                 </form>
-            </div>
-            <div>
-                Already have an account? <Link to="/login">Log in</Link>
             </div>
         </>
     )
