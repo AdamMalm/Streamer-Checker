@@ -1,10 +1,13 @@
- 
- .background-container {
-    width: 428px;
-    height: 926px;
-    background: linear-gradient(45deg, rgba(72,54,197,1) 0%, rgba(242,37,134,1) 100%);
+.background-container {
+  width: 428px;
+  height: 926px;
+  background: linear-gradient(
+    45deg,
+    rgba(72, 54, 197, 1) 0%,
+    rgba(242, 37, 134, 1) 100%
+  );
 
-    img {
-        display: none;
-    }
+  img {
+    display: none;
+  }
 }

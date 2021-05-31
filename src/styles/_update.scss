@@ -1,37 +1,12 @@
 @import "config";
 
-.signup-container {
+.update-container {
   background-color: $container-color;
   height: 50vh;
   width: 80vw;
   border-radius: 5%;
   color: black;
 
-  .login-signup-switch {
-    border: 1px grey solid;
-    text-align: center;
-    margin: 1rem;
-    margin-top: 3rem;
-    border-radius: 50px;
-    display: flex;
-
-    .login-signup {
-      flex: 1;
-      text-decoration: none;
-      margin: 0;
-      padding: 0.5rem;
-      border-radius: 50px;
-    }
-
-    .login-btn {
-      color: #333;
-    }
-    .signup-btn {
-      background-color: red;
-      padding: 8px 10%;
-      color: #fff;
-    }
-  }
   form {
     input {
       margin: 1rem;
@@ -51,4 +26,18 @@
       padding: 1rem;
     }
   }
+  .forgot-password {
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 50px;
+    color: #fff;
+    background-color: red;
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
 }

@@ -28,29 +28,25 @@ const Login = () => {
 
     return (
         <>
-            <Background>
-                <div className="login-container">
-                    <h2>Log In</h2>
-                    {error && <p>{error}</p>}
-                    <form onSubmit={handleSubmit}>
-                        <div className="form-group">
-                            <label htmlFor="email">Email: </label>
-                            <input type="email" name="email" ref={emailRef}/>
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="password">Password: </label>
-                            <input type="password" name="password" ref={passwordRef} required/>
-                        </div>
-                        <input disabled={loading} type="submit" value="Log In" />
-                    </form>
-                    <div>
-                        <Link to='/forgot-password'>Forgot Password?</Link>
+            <div className="login-container">
+                {error && <p>{error}</p>}
+                <div className="login-signup-switch">
+                    <Link className="login-btn login-signup" to="/login">Log in</Link>
+                    <Link className="signup-btn login-signup" to="/signup">Sign Up</Link>
+                </div>
+                <form onSubmit={handleSubmit}>
+                    <div className="form-group">
+                        <input className="email" type="email" name="email" placeholder="Enter email" ref={emailRef}/>
                     </div>
-                </div>
+                    <div className="form-group">
+                        <input className="password" type="password" name="password" placeholder="Enter password" ref={passwordRef} required/>
+                    </div>
+                    <input className="form-btn" disabled={loading} type="submit" value="Log In" />
+                </form>
                 <div>
-                    Need an an account? <Link to="/signup">Sign Up</Link>
+                    <Link className="forgot-password" to='/forgot-password'>Forgot Password?</Link>
                 </div>
-            </Background>
+            </div>
         </>
     )
 }

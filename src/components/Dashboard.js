@@ -25,11 +25,12 @@ const Dashboard = () => {
                     <h2>Profile</h2>
                     {error && <p>{error}</p>}
                     <strong>Email:</strong> {currentUser.email}
+                    <br></br>
                     <Link to="/update-profile">Update Profile</Link>
+                    <div>
+                        <button variant="link" onClick={handleLogout}>Log Out</button>
+                    </div>
                 </div>
-            </div>
-            <div>
-                <button variant="link" onClick={handleLogout}>Log Out</button>
             </div>
         </>
     )

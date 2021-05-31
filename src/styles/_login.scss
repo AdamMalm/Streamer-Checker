@@ -1,6 +1,6 @@
 @import "config";
 
-.signup-container {
+.login-container {
   background-color: $container-color;
   height: 50vh;
   width: 80vw;
@@ -24,12 +24,12 @@
     }
 
     .login-btn {
-      color: #333;
-    }
-    .signup-btn {
       background-color: red;
       padding: 8px 10%;
       color: #fff;
+    }
+    .signup-btn {
+      color: #333;
     }
   }
   form {
@@ -50,5 +50,14 @@
 
       padding: 1rem;
     }
+  }
+  .forgot-password {
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 50px;
+    color: #fff;
+    background-color: red;
+    padding: 1rem;
+    margin-top: 1rem;
   }
 }
