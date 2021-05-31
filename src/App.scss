@@ -3,7 +3,7 @@
 @import "styles/forgotPassword";
 @import "styles/update";
 @import "styles/dashboard";
-@import "styles/background";
+
 
 .App {
   text-align: center;
@@ -21,7 +21,7 @@
 }
 
 .App-header {
-  background-color: gray;
+  background: $gradient-color;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -29,6 +29,12 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+
+  img {
+    margin: auto;
+    margin-top: -50%;
+    margin-bottom: 5%;
+  }
 }
 
 .App-link {

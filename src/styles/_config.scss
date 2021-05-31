@@ -1,2 +1,7 @@
 $container-color: #f4f4f4;
 $text-color: #333;
+$gradient-color: linear-gradient(
+    45deg,
+    rgba(72, 54, 197, 1) 0%,
+    rgba(242, 37, 134, 1) 100%
+  );

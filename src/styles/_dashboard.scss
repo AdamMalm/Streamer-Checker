@@ -17,7 +17,7 @@
       font-size: 1.5rem;
       border-radius: 50px;
       color: #fff;
-      background-color: red;
+      background: $gradient-color;
       margin-top: 2rem;
       margin-bottom: 3rem;
       padding: 1rem;
@@ -28,7 +28,7 @@ button {
   font-size: 1.5rem;
   border-radius: 50px;
   color: #fff;
-  background-color: red;
+  background: $gradient-color;
   padding: 1rem;
   border: none;
 }

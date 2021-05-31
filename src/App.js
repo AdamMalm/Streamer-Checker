@@ -7,12 +7,13 @@ import Login from './components/Login'
 import PrivateRoute from './components/PrivateRoute'
 import ForgotPassword from './components/ForgotPassword'
 import UpdateProfile from './components/UpdateProfile'
-import Background from "./components/Background"
+import logo from "./images/logo.png"
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+      <img src={logo}/>
         <Router>
           <AuthProvider>
             <Switch>

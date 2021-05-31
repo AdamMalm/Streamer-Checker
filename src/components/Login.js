@@ -1,7 +1,6 @@
 import React, {useRef, useState} from 'react'
 import { useAuth } from '../contexts/AuthContext'
 import { Link, useHistory } from 'react-router-dom'
-import Background from './Background'
 
 const Login = () => {
     const emailRef = useRef()
