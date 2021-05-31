@@ -7,6 +7,7 @@ import Login from './components/Login'
 import PrivateRoute from './components/PrivateRoute'
 import ForgotPassword from './components/ForgotPassword'
 import UpdateProfile from './components/UpdateProfile'
+import Background from "./components/Background"
 
 function App() {
   return (

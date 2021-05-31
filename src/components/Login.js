@@ -1,6 +1,7 @@
 import React, {useRef, useState} from 'react'
 import { useAuth } from '../contexts/AuthContext'
 import { Link, useHistory } from 'react-router-dom'
+import Background from './Background'
 
 const Login = () => {
     const emailRef = useRef()
@@ -27,27 +28,29 @@ const Login = () => {
 
     return (
         <>
-            <div className="login-container">
-                <h2>Log In</h2>
-                {error && <p>{error}</p>}
-                <form onSubmit={handleSubmit}>
-                    <div className="form-group">
-                        <label htmlFor="email">Email: </label>
-                        <input type="email" name="email" ref={emailRef}/>
+            <Background>
+                <div className="login-container">
+                    <h2>Log In</h2>
+                    {error && <p>{error}</p>}
+                    <form onSubmit={handleSubmit}>
+                        <div className="form-group">
+                            <label htmlFor="email">Email: </label>
+                            <input type="email" name="email" ref={emailRef}/>
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="password">Password: </label>
+                            <input type="password" name="password" ref={passwordRef} required/>
+                        </div>
+                        <input disabled={loading} type="submit" value="Log In" />
+                    </form>
+                    <div>
+                        <Link to='/forgot-password'>Forgot Password?</Link>
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="password">Password: </label>
-                        <input type="password" name="password" ref={passwordRef} required/>
-                    </div>
-                    <input disabled={loading} type="submit" value="Log In" />
-                </form>
-                <div>
-                    <Link to='/forgot-password'>Forgot Password?</Link>
                 </div>
-            </div>
-            <div>
-                Need an an account? <Link to="/signup">Sign Up</Link>
-            </div>
+                <div>
+                    Need an an account? <Link to="/signup">Sign Up</Link>
+                </div>
+            </Background>
         </>
     )
 }
