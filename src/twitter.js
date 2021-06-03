@@ -1,0 +1,14 @@
+
+require('dotenv/config');
+
+const Twitter = require('twitter');
+
+const client = new Twitter({
+    consumer_key: process.env.TWITTER_CONSUMER_KEY,
+    consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
+    bearer_token: process.env.TWITTER_BEARER_TOKEN,
+    access_token: process.env.TWITTER_ACCESS_TOKEN,
+    access_secret: process.env.TWITTER_ACCESS_SECRET
+})
+
+export default client

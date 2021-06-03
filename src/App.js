@@ -8,6 +8,7 @@ import PrivateRoute from './components/PrivateRoute'
 import ForgotPassword from './components/ForgotPassword'
 import UpdateProfile from './components/UpdateProfile'
 import logo from "./images/logo.png"
+import Tweets from './components/Tweets'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Switch>
               <PrivateRoute exact path="/" component={Dashboard} />
               <PrivateRoute exact path="/update-profile" component={UpdateProfile} />
+              <PrivateRoute exact path="/tweets" component={Tweets} />
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
               <Route path ="/forgot-password" component={ForgotPassword}/>
