@@ -1,11 +1,24 @@
-import React, {useRef, useState} from 'react'
-import { useAuth } from '../contexts/AuthContext'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { FaUserCircle } from 'react-icons/fa';
 
-export default function following() {
+
+
+const Following = () => {
     return (
-        <div>
-            <h2>hej</h2>
-        </div>
+        <>
+            <Link to="/dashboard"><FaUserCircle className="profile-icon"/></Link>
+            <div className="following-container">
+                
+            </div>
+            <div className="following-tweets-container">
+                <div className="following-tweets-switch">
+                    <Link className="following-btn following-tweets" to="/following">Edit Following</Link>
+                    <Link className="tweets-btn following-tweets" to="/tweets">See Tweets</Link>
+                </div>
+            </div>
+        </>
     )
 }
+
+export default Following

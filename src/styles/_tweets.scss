@@ -1,0 +1,45 @@
+@import "config";
+
+.tweets-container {
+  background-color: $container-color;
+  height: 60vh;
+  width: $container-width;
+  border-radius: 5%;
+  color: black;
+}
+
+.tweets-following-container {
+  width: 100vw;
+  height: 70px;
+  background-color: #fff;
+  border-radius: 25px 25px 0 0;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+
+  .tweets-following-switch {
+    border: 1px grey solid;
+    text-align: center;
+    margin: 1rem;
+    margin-top: 1rem;
+    border-radius: 50px;
+    display: flex;
+
+    .tweets-following {
+      flex: 1;
+      text-decoration: none;
+      margin: 0;
+      padding: 0.5rem;
+      border-radius: 50px;
+    }
+
+    .following-btn {
+      color: #333;
+    }
+    .tweets-btn {
+      background: $gradient-color;
+      padding: 8px 10%;
+      color: #fff;
+    }
+  }
+}

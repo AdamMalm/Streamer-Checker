@@ -57,7 +57,7 @@ const UpdateProfile = () => {
                 </form>
             </div>
             <div>
-                <Link to="/">Cancel</Link>
+                <Link to="/dashboard">Cancel</Link>
             </div>
         </>
     )

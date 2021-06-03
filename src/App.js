@@ -7,6 +7,8 @@ import Login from './components/Login'
 import PrivateRoute from './components/PrivateRoute'
 import ForgotPassword from './components/ForgotPassword'
 import UpdateProfile from './components/UpdateProfile'
+import Tweets from './components/Tweets'
+import Following from './components/Following'
 import logo from "./images/logo.png"
 import Tweets from './components/Tweets'
 
@@ -18,9 +20,10 @@ function App() {
         <Router>
           <AuthProvider>
             <Switch>
-              <PrivateRoute exact path="/" component={Dashboard} />
+              <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute exact path="/update-profile" component={UpdateProfile} />
               <PrivateRoute exact path="/tweets" component={Tweets} />
+              <PrivateRoute exact path="/following" component={Following} />
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
               <Route path ="/forgot-password" component={ForgotPassword}/>
