@@ -24,8 +24,8 @@ const Dashboard = () => {
                 <div className="dashboard-body">
                     <h2>Profile</h2>
                     {error && <p>{error}</p>}
-                    <strong>Email:</strong> {currentUser.email}
-                    <br></br>
+                    <strong>Email:</strong>
+                    <p>{currentUser.email}</p>
                     <Link to="/update-profile">Update Profile</Link>
                     <div>
                         <button variant="link" onClick={handleLogout}>Log Out</button>
