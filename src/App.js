@@ -10,7 +10,6 @@ import UpdateProfile from './components/UpdateProfile'
 import Tweets from './components/Tweets'
 import Following from './components/Following'
 import logo from "./images/logo.png"
-import Tweets from './components/Tweets'
 
 function App() {
   return (

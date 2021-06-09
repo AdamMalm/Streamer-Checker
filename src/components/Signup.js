@@ -1,15 +1,17 @@
 import React, {useRef, useState} from 'react'
 import { useAuth } from '../contexts/AuthContext'
 import { Link, useHistory } from 'react-router-dom'
+import { createUserDocument } from '../firebase'
 
 const Signup = () => {
     const emailRef = useRef()
     const passwordRef = useRef()
     const passwordConfirmRef = useRef()
-    const { signup } = useAuth()
+    const { signup, currentUser } = useAuth()
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
     const history = useHistory()
+    const [following, setFollowing] = useState([])
 
     const handleSubmit = async e => {
         e.preventDefault()
@@ -21,13 +23,14 @@ const Signup = () => {
         try {
             setError('')
             setLoading(true)
-            await signup(emailRef.current.value, passwordRef.current.value)
-            history.push("/")
+            const user = await signup(emailRef.current.value, passwordRef.current.value)
+            await createUserDocument( user, following)
+            setLoading(false)
+            history.push("/tweets")
         } catch {
             setError('Failed to create an account')
+            setLoading(false)
         }
-
-        setLoading(false)
     }
 
     return (

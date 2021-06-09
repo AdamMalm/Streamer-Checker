@@ -1,12 +1,24 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { client } from '../twitter'
 
-const TwitterContext = () => {
+const TwitterContext = React.createContext();
+
+export const useTwitter = () => {
+    return useContext(TwitterContext)
+}
+
+const TwitterProvider = ({ children }) => {
+    
+
+    const value = {
+        
+    }
+
     return (
-        <div>
-            
-        </div>
+        <TwitterContext.Provider value={value}>
+            {!loading && children}
+        </TwitterContext.Provider>
     )
 }
 
-export default TwitterContext
+export default TwitterProvider
