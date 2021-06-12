@@ -10,6 +10,7 @@ import UpdateProfile from './components/UpdateProfile'
 import Tweets from './components/Tweets'
 import Following from './components/Following'
 import logo from "./images/logo.png"
+import React, { useState, useEffect } from "react";
 
 function App() {
   return (

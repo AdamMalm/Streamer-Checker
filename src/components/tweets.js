@@ -1,14 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaUserCircle } from 'react-icons/fa';
 import { useAuth } from '../contexts/AuthContext'
 import { auth, getUserFollowing } from "../firebase";
 import { getTweets } from "../twitter";
+import socketIOClient from "socket.io-client";
+import Tweet from "./Tweet";
 
 const Tweets = () => {
     const { currentUser } = useAuth()
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
+    const [tweetList, setTweetList] = useState([])
 
     const handleLoad = async e => {
         e.preventDefault()
@@ -25,31 +28,40 @@ const Tweets = () => {
         }
         return
     }
+    
 
-    const handleClick = async () => {
-        try {
-            setError('')
-            setLoading(true)
-            await getTweets()
-            setLoading(false)
-
-            // Hämta in current user followers och jämför
-                // if användaren redan följer: yeet
-                // om användaren inte följer lägg till i databas
-        } catch {
-            setError('Failed to follow')
-            setLoading(false)
-        }
-
+    useEffect(() => {
+        const socket = socketIOClient("http://localhost:3000/");
         
-    }
-    
-    
+        socket.on('connect', () => {
+            console.log("Socket Connected");
+        })
+        socket.on('tweet', (tweet) => {
+            const tweetData = [{
+                id: tweet.data.id,
+                text: tweet.data.text,
+                username: `@${tweet.includes.users[0].username}`
+            }]
+            setTweetList(tweetList => [...tweetList, tweetData]);
+        })
+        socket.on('disconnect', () => {
+            console.log("Socket Disconnected");
+        })
 
+        return () => socket.disconnect();
+    })
+    
     return (
         <>
             <Link to="/dashboard"><FaUserCircle className="profile-icon"/></Link>
-            <div className="tweets-container" onClick={handleClick}>
+            <div className="tweets-container">
+                <ul>
+                    {
+                        tweetList.map((item, index) => {
+                            return (<li key={index}><Tweet id={item[0].id} text={item[0].text} username={item[0].username}/></li>)
+                        })
+                    }
+                </ul>
             </div>
             <div className="tweets-following-container">
                 <div className="tweets-following-switch">
